@@ -1,7 +1,7 @@
 package org.launchcode.javawebdevtechjobspersistent.models;
 
 import javax.persistence.*;
-
+import javax.persistence.GeneratedValue;
 @Entity
 public class Job{
 
