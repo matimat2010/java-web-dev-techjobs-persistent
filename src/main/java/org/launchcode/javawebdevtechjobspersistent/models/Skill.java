@@ -11,11 +11,11 @@ public class Skill extends AbstractEntity {
     private String description;
 
     public Skill(String location) {
-        this.description = location;
+        this.description = description;
     }
     public Skill(){}
 
     public String getLocation() { return description; }
 
-    public void setLocation(String location) { this.description = location; }
+    public void setLocation(String location) { this.description = description; }
 }
