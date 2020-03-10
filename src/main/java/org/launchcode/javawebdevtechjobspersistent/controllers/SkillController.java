@@ -21,16 +21,12 @@ public class SkillController {
     @GetMapping("add")
     public String displayAddSkillForm(Model model) {
         model.addAttribute(new Skill());
-        return "employers/add";
+        return "skills/add";
     }
 
     @PostMapping("add")
     public String processAddSkillForm(@ModelAttribute @Valid Skill newSkill,
                                          Errors errors, Model model) {
-
-        //processAddEmployerForm already takes care of sending the form back if any of the submitted
-        // employer object information is invalid. However, it doesn’t yet contain the code to save a
-        // valid object. Use employerRepository and the appropriate method to do so.
 
         if (errors.hasErrors()) {
             model.addAttribute("title","Add Event");
@@ -49,6 +45,7 @@ public class SkillController {
             model.addAttribute("skill", skill);
             return "skills/view";
         } else {
+            model.addAttribute("skill", skillRepository.findAll());
             return "redirect:../";
         }
     }

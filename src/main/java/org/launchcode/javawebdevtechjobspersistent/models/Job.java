@@ -1,13 +1,8 @@
 package org.launchcode.javawebdevtechjobspersistent.models;
 
-import javax.persistence.*;
-import javax.persistence.GeneratedValue;
+import javax.persistence.Entity;
 @Entity
-public class Job{
-
-    @Id
-    @GeneratedValue
-    private int id;
+public class Job extends AbstractEntity{
 
     private String name;
 
